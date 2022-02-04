@@ -1,0 +1,115 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@section scripts{
+    <script>
+        window.addEventListener("load", function () {
+            var bodyHeight = $(document).height() - ($("footer").height() + parseInt($("footer").css("border-top-width").replace("px","")) + parseInt($("nav").css("margin-bottom").replace("px","")));
+            $("body").css("height", bodyHeight + "px");
+            var rowHeight = ($("body").height() - $("header").height()) / 4;
+            for(var i = 0; i < 4; i++){
+                for(var j = 10; j < 22; j++){
+                    $("#Container" + (i + 1).toString() + (j + 1).toString()).html((i + 1).toString() + (j + 1).toString());
+                    $("#Container" + (i + 1).toString() + (j + 1).toString()).css("text-align","center");
+                    $("#Container" + (i + 1).toString() + (j + 1).toString()).css("vertical-align","middle");
+                    $("#Container" + (i + 1).toString() + (j + 1).toString()).css("border", "thin solid #cceeee");
+                }
+                $("#Container" + (i + 1).toString()).css("height", rowHeight.toString() + "px");
+            }
+            ContentStructure($("#MainCompanyContainer"), 3, 4, $("#Container111"),"rgba(32, 201, 151, 0.3)");
+            ContentStructure($("#MicroService1"), 9, 2, $("#Container114"),"rgba(255, 192, 203, 0.3)");
+            ContentStructure($("#MicroService2"), 7, 2, $("#Container314"),"rgba(0, 255, 255, 0.3)");
+            ContentStructure($("#MicroService3"), 2, 2, $("#Container321"),"rgba(75, 0, 130, 0.3)");
+        });
+        function ContentStructure(container, w, h, base, color){
+            var cells = [w,h];
+            var borderWidth = cells[0] * 2;
+            var borderheight = cells[1] * 2;
+            container.css("width",($("#Container111").width() * cells[0] + borderWidth).toString() + "px");
+            container.css("height",($("#Container111").height() * cells[1] + borderheight).toString() + "px");
+            container.css("line-height",container.css("height"));
+            container.css("text-align","center");
+            container.css("top",base.position().top);
+            container.css("left",base.position().left);
+            container.css("background-color",color);
+            container.append(container.attr("id"));
+            $("#RootContainer").append(container);
+        }
+    </script>
+}
+<div id="RootContainer" class="LayoutBase" style="width:100%;height:100%;">
+    <div id="Container1" style="display:table;width:100%;">
+        <div id="Container11" class="LayoutContainer" style="display:table-row;">
+            <div id="Container111" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container112" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container113" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container114" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container115" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container116" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container117" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container118" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container119" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container120" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container121" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container122" class="LayoutCell" style="display:table-cell"></div>
+        </div>
+    </div>
+    <div id="Container2" style="display:table;width:100%;">
+        <div id="Container21" class="LayoutContainer" style="display:table-row;">
+            <div id="Container211" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container212" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container213" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container214" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container215" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container216" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container217" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container218" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container219" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container220" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container221" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container222" class="LayoutCell" style="display:table-cell"></div>
+        </div>
+    </div>
+    <div id="Container3" style="display:table;width:100%;">
+        <div id="Container31" class="LayoutContainer" style="display:table-row;">
+            <div id="Container311" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container312" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container313" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container314" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container315" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container316" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container317" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container318" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container319" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container320" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container321" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container322" class="LayoutCell" style="display:table-cell"></div>
+        </div>
+    </div>
+    <div id="Container4" style="display:table;width:100%;">
+        <div id="Container41" class="LayoutContainer" style="display:table-row;">
+            <div id="Container411" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container412" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container413" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container414" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container415" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container416" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container417" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container418" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container419" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container420" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container421" class="LayoutCell" style="display:table-cell"></div>
+            <div id="Container422" class="LayoutCell" style="display:table-cell"></div>
+        </div>
+    </div>
+</div>
+<div id="ShelveContainer" class="LayoutBase"  style="display: none;">
+    <div id="MainCompanyContainer" class="LayoutContainer"  style="position:absolute;border:1px solid #cccccc;">
+    </div>
+    <div id="MicroService1" class="LayoutContainer" style="position:absolute;border: thin solid #ccccff;">
+    </div>
+    <div id="MicroService2" class="LayoutContainer" style="position:absolute;border: thin solid #ccccff;">
+    </div>
+    <div id="MicroService3" class="LayoutContainer" style="position:absolute;border: thin solid #ccccff;">
+    </div>
+</div>
